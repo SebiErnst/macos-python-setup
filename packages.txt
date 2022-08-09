@@ -1,6 +1,7 @@
 folium
 geopandas
 python-graphviz
+ipython-sql
 jupyterlab
 jupyterlab-git
 jupytext
@@ -10,9 +11,11 @@ openpyxl
 osmnx
 pandas
 plotly
+psycopg2-binary
 pydot
 pyrosm
 pyvis
 redis-py
 scikit-learn
 seaborn
+sqlalchemy
