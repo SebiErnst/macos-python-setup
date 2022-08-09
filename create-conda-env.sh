@@ -17,6 +17,6 @@ source /opt/homebrew/Caskroom/miniforge/base/etc/profile.d/conda.sh
 conda env remove -n $ENV_NAME
 conda create -y -n $ENV_NAME $PYTHON_PACKAGE $(<packages.txt)
 conda activate $ENV_NAME
-conda install -y -c apple -n ml tensorflow-deps
+conda install -y -c apple -n $ENV_NAME tensorflow-deps
 python -m pip install tensorflow-macos
 python -m pip install tensorflow-metal
