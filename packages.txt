@@ -1,7 +1,0 @@
-ipython-sql
-jupyterlab
-jupyterlab-git
-jupytext
-matplotlib
-pandas
-plotly
