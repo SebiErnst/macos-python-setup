@@ -2,21 +2,55 @@
 
 if [ -z "$1" ]
 then 
-	PYTHON_PACKAGE="python"
+	echo Using default configuration.
+	PACKAGE_FILE="packages.txt"
 	ENV_NAME="python"
 else
-	PYTHON_PACKAGE="python=$1"
-	NAME_SUFFIX=`echo $1 | sed 's/\.//g'`
-	ENV_NAME="py$NAME_SUFFIX"
+	PACKAGE_FILE=$1.txt
 fi
-echo $PYTHON_PACKAGE
-echo $ENV_NAME
 
-source /opt/homebrew/Caskroom/miniforge/base/etc/profile.d/conda.sh
+if [ -z "$2" ]
+then 
+	ENV_NAME=$1
+else
+	ENV_NAME=$2
+fi
 
+echo Using package list file: $PACKAGE_FILE
+echo Installing to environment: $ENV_NAME
+
+if [ -z "$CONDA_PREFIX_1" ]
+then
+	set | grep CONDA
+	if [ -z "$CONDA_PREFIX" ]
+	then
+		echo "ERROR: couldn't find conda base."
+		exit 1
+	else
+		CONDA_BASE=$CONDA_PREFIX
+	fi
+else
+	CONDA_BASE=$CONDA_PREFIX_1
+fi
+
+echo Using conda base from $CONDA_BASE
+
+source $CONDA_BASE/etc/profile.d/conda.sh
+
+echo Deactivating conda environment
+conda deactivate
+
+echo Removing conda environment
 conda env remove -n $ENV_NAME
-conda create -y -n $ENV_NAME $PYTHON_PACKAGE $(<packages.txt)
-conda activate $ENV_NAME
-conda install -y -c apple -n $ENV_NAME tensorflow-deps
-python -m pip install tensorflow-macos
-python -m pip install tensorflow-metal
+
+echo Creating new environment
+conda create -y -n $ENV_NAME --file $PACKAGE_FILE
+
+ADDON_SCRIPT=$1.sh
+
+if [ -f "$ADDON_SCRIPT" ]
+then
+	echo Running additional commands from $ADDON_SCRIPT in environment $EVN_NAME...
+	conda activate $ENV_NAME
+	source $ADDON_SCRIPT
+fi
