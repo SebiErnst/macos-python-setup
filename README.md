@@ -23,7 +23,7 @@ Use the script to create the environment according to the given formula:
 ./setup-conda-env.sh [FORMULA_NAME] [ENVIRONMENT_NAME]
 ```
 
-If `FORMULA_NAME` is supplied, the script will look for `FORMULA_NAME.txt` and use that to set up the formula. Otherwise, `packages.txt` will be used to create a basic Python setup, and the environment will be called `python`.
+If `FORMULA_NAME` is supplied, the script will look for `FORMULA_NAME.yml` and use that to set up the formula. Otherwise, `python.yml` will be used to create a basic Python setup, and the environment will be called `python`.
 
 If  `ENVIRONMENT_NAME` is supplied, it will be used as the environment name. Otherwise, `FORMULA_NAME` will be used.
 
@@ -35,7 +35,7 @@ Additionally, if `FORMULA_NAME.sh` exists, it will be run inside the newly creat
 
 #### Set up a basic Python environment
 
-This will create an environment called `python`, using `packages.txt`.
+This will create an environment called `python`, using `packages.yml`.
 
 ```
 ./setup-conda-env.sh
