@@ -1,0 +1,7 @@
+name: jupyter-pygame
+channels:
+- conda-forge
+dependencies:
+- jupyterlab
+- scipy
+- matplotlib
