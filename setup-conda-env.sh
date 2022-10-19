@@ -3,10 +3,10 @@
 if [ -z "$1" ]
 then 
 	echo Using default configuration.
-	PACKAGE_FILE="packages.txt"
+	PACKAGE_FILE="python.yml"
 	ENV_NAME="python"
 else
-	PACKAGE_FILE=$1.txt
+	PACKAGE_FILE=$1.yml
 fi
 
 if [ -z "$2" ]
@@ -21,7 +21,6 @@ echo Installing to environment: $ENV_NAME
 
 if [ -z "$CONDA_PREFIX_1" ]
 then
-	set | grep CONDA
 	if [ -z "$CONDA_PREFIX" ]
 	then
 		echo "ERROR: couldn't find conda base."
@@ -44,7 +43,7 @@ echo Removing conda environment
 conda env remove -n $ENV_NAME
 
 echo Creating new environment
-conda create -y -n $ENV_NAME --file $PACKAGE_FILE
+conda env create -n $ENV_NAME --file $PACKAGE_FILE
 
 ADDON_SCRIPT=$1.sh
 
