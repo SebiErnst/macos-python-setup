@@ -9,6 +9,20 @@ Download or clone the repository, to a directory of your choice:
 git clone https://github.com/SebiErnst/macos-python-setup.git
 ```
 
+### Updating
+
+If the repository has been cloned using Git, you can always pull the code updates (and new definitons) by entering the directory:
+
+```
+cd macos-python-setup
+```
+
+And doing a Git pull:
+
+```
+git pull
+```
+
 ## Usage
 
 Change into the cloned/downloaded directory, e.g.:
