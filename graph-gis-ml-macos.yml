@@ -1,21 +1,25 @@
-folium
-geopandas
-python-graphviz
-ipython-sql
-jupyterlab
-jupyterlab-git
-jupytext
-matplotlib
-networkx
-openpyxl
-osmnx
-pandas
-plotly
-psycopg2-binary
-pydot
-pyrosm
-pyvis
-redis-py
-scikit-learn
-seaborn
-sqlalchemy
+name: graph-gis-ml-macos
+channels:
+- conda-forge
+dependencies:
+- folium
+- geopandas
+- python-graphviz
+- ipython-sql
+- jupyterlab
+- jupyterlab-git
+- jupytext
+- matplotlib
+- networkx
+- openpyxl
+- osmnx
+- pandas
+- plotly
+- psycopg2-binary
+- pydot
+- pyrosm
+- pyvis
+- redis-py
+- scikit-learn
+- seaborn
+- sqlalchemy

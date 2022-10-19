@@ -1,8 +1,12 @@
-ipython-sql
-jupyterlab
-jupyterlab-git
-jupytext
-matplotlib
-pandas
-plotly
-scikit-learn
+name: ml-macos-applesilicon
+channels:
+- conda-forge
+dependencies:
+- ipython-sql
+- jupyterlab
+- jupyterlab-git
+- jupytext
+- matplotlib
+- pandas
+- plotly
+- scikit-learn
