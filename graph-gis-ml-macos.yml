@@ -25,5 +25,4 @@ dependencies:
 - seaborn
 - sqlalchemy
 - ipyleaflet
-- antlr==4.9.2_1
 - antlr4-python3-runtime==4.9.2
