@@ -37,7 +37,7 @@ echo Using conda base from $CONDA_BASE
 source $CONDA_BASE/etc/profile.d/conda.sh
 
 echo Deactivating conda environment
-conda deactivate
+conda activate base
 
 echo Removing conda environment
 conda env remove -n $ENV_NAME
