@@ -1,6 +1,14 @@
 # macOS Python setup
 A simple script used to set up conda environments, mostly for Python-related packages, on macOS machines (but should be usable on other *NIX systems as well).
 
+## Prerequisites
+
+You need to have a working Conda installation on your machine. [Miniforge](https://github.com/conda-forge/miniforge) is a good idea for macOS:
+
+```
+brew install miniforge
+```
+
 ## Installation
 
 Download or clone the repository, to a directory of your choice:
