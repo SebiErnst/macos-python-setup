@@ -1,0 +1,29 @@
+name: graph-gis-ml-macos
+channels:
+- conda-forge
+dependencies:
+- python
+- folium
+- geopandas
+- python-graphviz
+- ipython-sql
+- jupyterlab
+- jupyterlab-git
+- jupytext
+- matplotlib
+- networkx
+- openpyxl
+- osmnx
+- pandas
+- plotly
+- psycopg2-binary
+- pydot
+- pyrosm
+- pyvis
+- redis-py
+- scikit-learn
+- seaborn
+- sqlalchemy
+- ipyleaflet
+- antlr==4.9.2_1
+- antlr4-python3-runtime==4.9.2
